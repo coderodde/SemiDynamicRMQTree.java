@@ -2,7 +2,6 @@ package com.github.coderodde.util;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.List;
@@ -185,10 +184,8 @@ public final class SemiDynamicRMQTree<K extends Comparable<? super K>,
         Set<AbstractRMQTreeNode<V>> pathSet   = new HashSet<>(path);
         List<AbstractRMQTreeNode<V>> nodeList = new ArrayList<>();
         
-        for (int i = 0; i < path.size(); i++) {
-            InternalRMQTreeNode<V> parent = 
-                    (InternalRMQTreeNode<V>) path.get(i);
-            
+        for (AbstractRMQTreeNode<V> node : path) {
+            InternalRMQTreeNode<V> parent = (InternalRMQTreeNode<V>) node;
             AbstractRMQTreeNode<V> leftChild  = parent.getLeftChild();
             AbstractRMQTreeNode<V> rightChild = parent.getRightChild();
             
@@ -211,9 +208,9 @@ public final class SemiDynamicRMQTree<K extends Comparable<? super K>,
         Set<AbstractRMQTreeNode<V>> pathSet   = new HashSet<>(path);
         List<AbstractRMQTreeNode<V>> nodeList = new ArrayList<>();
         
-        for (int i = 0; i < path.size() - 1; i++) {
+        for (AbstractRMQTreeNode<V> node : path) {
             InternalRMQTreeNode<V> parent = 
-                    (InternalRMQTreeNode<V>) path.get(i);
+                    (InternalRMQTreeNode<V>) node;
             
             AbstractRMQTreeNode<V> leftChild  = parent.getLeftChild();
             AbstractRMQTreeNode<V> rightChild = parent.getRightChild();
@@ -247,7 +244,6 @@ public final class SemiDynamicRMQTree<K extends Comparable<? super K>,
             node = node.getParent();
         }
         
-        Collections.reverse(path);
         return path;
     }
     
