@@ -18,7 +18,9 @@ import static com.github.coderodde.util.Utils.min;
  * values. The operation 
  * {@link #update(java.lang.Comparable, java.lang.Comparable)} runs in exact
  * logarithmic time; so does the 
- * {@link #getRangeMinimum(java.lang.Comparable, java.lang.Comparable) }.
+ * {@link #getRangeMinimum(java.lang.Comparable, java.lang.Comparable) }. 
+ * <p>
+ * Building the tree takes {@code O(n log n)} time.
  * 
  * @param <K> the key type.
  * @param <V> the value type.
@@ -29,6 +31,14 @@ public final class SemiDynamicRMQTree<K extends Comparable<? super K>,
     private final AbstractRMQTreeNode<V> root;
     private final Map<K, LeafRMQTreeNode<V>> leafMap;
     
+    /**
+     * Construct an RMQ tree from the set of key/value pairs 
+     * ({@link com.github.coderodde.util.KeyValuePair}). Runs in 
+     * {@code O(n log n)} time.
+     * 
+     * @param keyValuePairSet the set of key/value pairs from which to construct
+     *                        the RMQ tree.
+     */
     public SemiDynamicRMQTree(Set<KeyValuePair<K, V>> keyValuePairSet) {
         RMQTreeBuilderResult<K, V> result = 
                 SemiDynamicRMQTreeBuilder.buildRMQTree(keyValuePairSet);
