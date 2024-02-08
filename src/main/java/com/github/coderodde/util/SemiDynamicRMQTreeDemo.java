@@ -123,7 +123,10 @@ public final class SemiDynamicRMQTreeDemo {
         tree.update(key, value);
         long end = System.nanoTime();
         
-        System.out.printf("update in %,d nanoseconds.\n", end - start);
+        System.out.printf("update(%d, %d) in %,d nanoseconds.\n", 
+                          key,
+                          value,
+                          end - start);
     }
     
     private static Long runRMQ(String leftKeyString, String rightKeyString) {
@@ -134,7 +137,10 @@ public final class SemiDynamicRMQTreeDemo {
         Long returnValue = tree.getRangeMinimum(leftKey, rightKey);
         long end = System.nanoTime();
         
-        System.out.printf("rmq in %,d nanoseconds.\n", end - start);
+        System.out.printf("rmq(%d, %d) in %,d nanoseconds.\n",
+                          leftKey, 
+                          rightKey, 
+                          end - start);
         
         return returnValue;
     }

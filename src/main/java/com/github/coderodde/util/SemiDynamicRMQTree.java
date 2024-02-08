@@ -115,17 +115,11 @@ public final class SemiDynamicRMQTree<K extends Comparable<? super K>,
                 computeSplitNode(leftLeaf,
                                  rightLeaf);
         
-        List<AbstractRMQTreeNode<V>> leftPath = getPath(splitNode,
-                                                              leftLeaf);
+        List<AbstractRMQTreeNode<V>> leftPath  = getPath(splitNode, leftLeaf);
+        List<AbstractRMQTreeNode<V>> rightPath = getPath(splitNode, rightLeaf);
         
-        List<AbstractRMQTreeNode<V>> rightPath = getPath(splitNode,
-                                                               rightLeaf);
-        
-        List<AbstractRMQTreeNode<V>> leftPathV = 
-                computeLeftPathV(leftPath);
-        
-        List<AbstractRMQTreeNode<V>> rightPathV = 
-                computeRightPartV(rightPath);
+        List<AbstractRMQTreeNode<V>> leftPathV  = computeLeftPathV(leftPath);
+        List<AbstractRMQTreeNode<V>> rightPathV = computeRightPartV(rightPath);
         
         V vl = computeMinimum(leftPathV);
         V vr = computeMinimum(rightPathV);
