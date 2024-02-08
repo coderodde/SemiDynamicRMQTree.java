@@ -77,7 +77,7 @@ public final class SemiDynamicRMQTree<K extends Comparable<? super K>,
     
     /**
      * Given the range {@code R = [leftKey ... rightKey]}, return the minimum
-     * value in {@code R}. Runs in worst-case logarithmic time.
+     * value in {@code R}. Runs in exact logarithmic time.
      * 
      * @param leftKey  the leftmost key of the range.
      * @param rightKey the rightmost key of the range.
