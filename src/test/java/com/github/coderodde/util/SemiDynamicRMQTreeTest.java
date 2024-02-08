@@ -44,17 +44,9 @@ public class SemiDynamicRMQTreeTest {
         assertEquals(Long.valueOf(3L), leaf3.getValue());
         assertEquals(Long.valueOf(4L), leaf4.getValue());
         
-        assertEquals(Long.valueOf(1L), 
-                     tree.getRangeMinimum(Integer.valueOf(1),
-                                          Integer.valueOf(2)));
-        
-        assertEquals(Long.valueOf(3L),
-                     tree.getRangeMinimum(Integer.valueOf(3), 
-                                          Integer.valueOf(4)));
-        
-        assertEquals(Long.valueOf(2L),
-                     tree.getRangeMinimum(Integer.valueOf(2), 
-                                          Integer.valueOf(4)));
+        assertEquals(Long.valueOf(1L), tree.getRangeMinimum(1, 2));
+        assertEquals(Long.valueOf(3L), tree.getRangeMinimum(3, 4));
+        assertEquals(Long.valueOf(2L), tree.getRangeMinimum(2, 4));
         
         assertEquals(Long.valueOf(1L),
                      tree.getRangeMinimum(Integer.valueOf(1), 

@@ -2,8 +2,7 @@ package com.github.coderodde.util;
 
 import java.util.Objects;
 
-public final class InternalRMQTreeNode<V extends Comparable<? super V>>
-extends AbstractRMQTreeNode<V> {
+public final class InternalRMQTreeNode<V> extends AbstractRMQTreeNode<V> {
     
     private AbstractRMQTreeNode<V> leftChild;
     private AbstractRMQTreeNode<V> rightChild;
@@ -27,6 +26,6 @@ extends AbstractRMQTreeNode<V> {
     @Override
     public String toString() {
         return String.format("[INTERNAL: value = \"%s\"]", 
-                             Objects.toString(value));
+                             Objects.toString(getValue()));
     }
 }

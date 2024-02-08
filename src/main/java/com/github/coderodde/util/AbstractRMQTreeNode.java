@@ -1,9 +1,9 @@
 package com.github.coderodde.util;
 
-public abstract class AbstractRMQTreeNode<V extends Comparable<? super V>> {
+public abstract class AbstractRMQTreeNode<V> {
     
-    protected V value;
-    protected AbstractRMQTreeNode<V> parent;
+    private V value;
+    private AbstractRMQTreeNode<V> parent;
 
     public V getValue() {
         return value;

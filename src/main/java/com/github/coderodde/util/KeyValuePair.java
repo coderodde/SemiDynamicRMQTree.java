@@ -2,8 +2,7 @@ package com.github.coderodde.util;
 
 import java.util.Objects;
 
-public final class KeyValuePair<K extends Comparable<? super K>, 
-                                V extends Comparable<? super V>> 
+public final class KeyValuePair<K extends Comparable<? super K>, V>
         
 implements Comparable<KeyValuePair<K, V>> {
     
