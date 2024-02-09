@@ -2,7 +2,7 @@ package com.github.coderodde.util;
 
 import java.util.Objects;
 
-public final class LeafRMQTreeNode<V> extends AbstractRMQTreeNode<V> {
+final class LeafRMQTreeNode<V> extends AbstractRMQTreeNode<V> {
     
     @Override
     public String toString() {

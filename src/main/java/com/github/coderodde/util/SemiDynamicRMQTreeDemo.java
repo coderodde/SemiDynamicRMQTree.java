@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public final class SemiDynamicRMQTreeDemo {
+final class SemiDynamicRMQTreeDemo {
     
     private static final int INITIAL_TREE_SIZE = 4;
              

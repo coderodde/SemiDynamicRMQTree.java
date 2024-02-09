@@ -9,8 +9,14 @@ import java.util.Objects;
 import java.util.Set;
 import static com.github.coderodde.util.Utils.min;
 
-public final class SemiDynamicRMQTreeBuilder<K extends Comparable<? super K>,
-                                             V extends Comparable<? super V>> {
+/**
+ * This class is responsible for actual RMQ tree building.
+ * 
+ * @param <K> the key type.
+ * @param <V> the value type.
+ */
+final class SemiDynamicRMQTreeBuilder<K extends Comparable<? super K>,
+                                      V extends Comparable<? super V>> {
 
     /**
      * Implements the actual tree building.'

@@ -1,6 +1,6 @@
 package com.github.coderodde.util;
 
-public abstract class AbstractRMQTreeNode<V> {
+abstract class AbstractRMQTreeNode<V> {
     
     private V value;
     private AbstractRMQTreeNode<V> parent;
