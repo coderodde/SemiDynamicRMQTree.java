@@ -1,6 +1,6 @@
 package com.github.coderodde.util;
 
-public final class Utils {
+final class Utils {
     
     /**
      * Returns the smaller of the two given values.
@@ -10,7 +10,7 @@ public final class Utils {
      * @param value2 the second value.
      * @return the smaller of the two input values.
      */
-    public static <E extends Comparable<? super E>> E min(E value1, E value2) {
+    static <E extends Comparable<? super E>> E min(E value1, E value2) {
         return value1.compareTo(value2) < 0 ? value1 : value2;
     }
 }

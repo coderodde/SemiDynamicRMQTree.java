@@ -98,9 +98,11 @@ final class SemiDynamicRMQTreeDemo {
                         return;
                 }
             } catch (Exception ex) {
-                System.out.printf(
+                System.err.printf(
                         "ERROR: Could not parse command \"%s\".\n",
                         commandLine);
+                
+                System.err.println(ex);
             }
         }
     }
